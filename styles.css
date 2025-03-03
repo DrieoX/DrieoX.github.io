@@ -87,14 +87,23 @@
   .activities {
     background: #383838;    /* Another shade of grey */
     padding: 2em;
-    text-align: center;
+    text-align: left;
   }
-  .activities h6 {
+  .activities ol {
+    column-count: 5;
+    column-gap: 2;
+  }
+  .activities p {
     font-size: 1.2em;
     font-style: italic;
     color: #ccc;
-    max-width: 700px;
     margin: 0 auto;
+  }
+  .activities p:hover {
+    color: #000;
+  }
+  .activities a {
+    text-decoration: none;
   }
   
   /* Call-to-Action */
