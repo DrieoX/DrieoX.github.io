@@ -1,0 +1,96 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fafafa;
+    padding: 1em;
+  }
+  
+  /* Header */
+  header {
+    background: #eaeaea;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 4px;
+  }
+  
+  header p {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+  
+  header ul {
+    list-style-type: disc;
+    padding-left: 1.5em;
+  }
+  
+  header ul li {
+    margin-bottom: 0.3em;
+  }
+  
+  header a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  header a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Image */
+  img {
+    display: block;
+    margin: 1em auto;
+    max-width: 200px; /* Adjust to control size */
+  }
+  img + p {
+    text-align: center;
+    margin-bottom: 2em;
+  }
+  
+  /* Main content wrapper */
+  .page-content {
+    background: #fff;
+    padding: 1em;
+    border-radius: 4px;
+    margin-bottom: 1em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  /* Heading */
+  h1 {
+    margin: 1em 0;
+    font-size: 2em;
+    text-align: center;
+  }
+  
+  /* Sections by ID */
+  #about,
+  #education,
+  #skills,
+  #portfolio,
+  #contact {
+    padding: 1em 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  #contact {
+    border-bottom: none; /* Last section doesn't need a border */
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: 1px solid #ccc;
+    font-size: 0.9em;
+    color: #666;
+  }
+  

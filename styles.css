@@ -29,9 +29,9 @@
   .hero {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
     padding: 4em 1em;
     background: linear-gradient(135deg, #0ff 0%, #09f 100%);
     color: #000;           /* Text on a bright background */
@@ -45,20 +45,6 @@
     font-size: 1.2em;
     max-width: 600px;
     margin-bottom: 1.5em;
-  }
-  .hero button {
-    background: #000;      /* Black button */
-    color: #0ff;           /* Cyan text */
-    border: 2px solid #0ff;
-    padding: 0.8em 2em;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: 0.3s;
-  }
-  .hero button:hover {
-    background: #0ff;      /* Cyan background on hover */
-    color: #000;
   }
   
   /* Features / Projects Section */
@@ -83,29 +69,32 @@
     margin-bottom: 0.5em;
     font-size: 1.3em;
   }
+  .feature-item h3:hover {
+    color:  white;
+  }
+  .feature-item a {
+    text-decoration: none;
+  }
+  .feature-item a:hover {
+    color: wheat;
+  }
   .feature-item p {
     color: #ddd;
     font-size: 1em;
   }
   
   /* Testimonial Section */
-  .testimonial {
+  .activities {
     background: #383838;    /* Another shade of grey */
     padding: 2em;
     text-align: center;
   }
-  .testimonial blockquote {
+  .activities h6 {
     font-size: 1.2em;
     font-style: italic;
     color: #ccc;
     max-width: 700px;
     margin: 0 auto;
-  }
-  .testimonial cite {
-    display: block;
-    margin-top: 1em;
-    font-weight: bold;
-    color: #0ff;
   }
   
   /* Call-to-Action */
@@ -133,6 +122,7 @@
   }
   .call-to-action a:hover {
     background: #09f;       /* Slightly different shade of cyan/blue */
+    color: wheat;
   }
   
   /* Footer */
