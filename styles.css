@@ -15,7 +15,7 @@
   header {
     background: #222;      
     padding: 1em;
-    text-align: center;
+    text-align: left;
     border-bottom: 1px solid #444;
   }
   header h2 {
@@ -43,6 +43,15 @@
     font-size: 1.2em;
     max-width: 600px;
     margin-bottom: 1.5em;
+  }
+
+  .educ {
+    padding: 2em;
+    text-align: left;
+  }
+
+  .educ h3 {
+    color: #0ff;
   }
 
   .features {
@@ -84,6 +93,9 @@
     background: #383838;
     padding: 2em;
     text-align: left;
+  }
+  .activities h3 {
+    color: #0ff;
   }
   .activities ol {
     column-count: 5;
