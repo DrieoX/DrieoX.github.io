@@ -7,9 +7,17 @@
 </head>
 <body>
 
-  <header>
+<header>
     <h2>My Portfolio</h2>
-  </header>
+    <!-- Wrap all buttons in a container (optional, but helps styling) -->
+    <div class="nav-buttons">
+        <button onclick="scrollToSection('.educ')">Background</button>
+        <button onclick="scrollToSection('.skills')">Skills</button>
+        <button onclick="scrollToSection('.features')">Projects</button>
+        <button onclick="scrollToSection('.activities')">Activities</button>
+        <button onclick="scrollToSection('.call-to-action')">Contacts</button>
+    </div>
+</header>
 
   <section class="hero">
     <img src="rrs/image.png" alt="Me" width="225" height="300">
@@ -23,6 +31,61 @@
         <li>Pongol Elementary School</li>
         <li>Holy Cross High School</li>
         <li>University of Science and Technology of the Southern Philippines Cagayan De Oro City campus(current)</li>
+    </ul>
+  </section>
+
+  <section class="skills">
+    <h3>Skills and masteries:</h3>
+    <ul>
+      <li data-skill-level="40" class="skill-item">
+        Python
+        <div class="progress-bar">
+          <div class="fill"></div>
+        </div>
+        <span class="skill-percentage"></span>
+      </li>
+      <li data-skill-level="50" class="skill-item">
+        C++
+        <div class="progress-bar">
+          <div class="fill"></div>
+        </div>
+        <span class="skill-percentage"></span>
+      </li>
+      <li data-skill-level="60" class="skill-item">
+        HTML &amp; CSS
+        <div class="progress-bar">
+          <div class="fill"></div>
+        </div>
+        <span class="skill-percentage"></span>
+      </li>
+      <li data-skill-level="35" class="skill-item">
+        JavaScript
+        <div class="progress-bar">
+          <div class="fill"></div>
+        </div>
+        <span class="skill-percentage"></span>
+      </li>
+      <li data-skill-level="20" class="skill-item">
+        Java
+        <div class="progress-bar">
+          <div class="fill"></div>
+        </div>
+        <span class="skill-percentage"></span>
+      </li>
+      <li data-skill-level="30" class="skill-item">
+        ESP/Arduino application
+        <div class="progress-bar">
+          <div class="fill"></div>
+        </div>
+        <span class="skill-percentage"></span>
+      </li>
+      <li data-skill-level="40" class="skill-item">
+        MySQL
+        <div class="progress-bar">
+          <div class="fill"></div>
+        </div>
+        <span class="skill-percentage"></span>
+      </li>
     </ul>
   </section>
 
@@ -59,6 +122,44 @@
   <footer>
     <p>© 2025 Llyle Andrie Lingat - IT Student Portfolio</p>
   </footer>
+
+  <script>
+    function scrollToSection(selector) {
+      const element = document.querySelector(selector);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    const skillItems = document.querySelectorAll('.skill-item');
+
+    document.querySelectorAll('.skill-item').forEach(item => {
+        const level = parseInt(item.getAttribute('data-skill-level'), 10);
+        const fill = item.querySelector('.fill');
+        const percentageSpan = item.querySelector('.skill-percentage');
+    
+        fill.style.width = level + '%';
+    
+        percentageSpan.textContent = level + '%';
+    
+        let color;
+        if (level < 25) {
+          color = 'red';
+        } else if (level < 50) {
+          color = 'orange';
+        } else if (level < 75) {
+          color = 'gold'; 
+        } else {
+          color = 'green';
+        }
+
+        percentageSpan.style.color = color;
+      });
+      
+      
+  </script>
+
+  
 
 </body>
 </html>

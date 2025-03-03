@@ -10,20 +10,43 @@
     font-family: Arial, sans-serif;
     line-height: 1.6;
   }
-  
 
   header {
     background: #222;      
     padding: 1em;
-    text-align: left;
     border-bottom: 1px solid #444;
-  }
-  header h2 {
-    color: #0ff;       
-    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
 
+  header h2 {
+    color: #0ff;       
+    font-size: 1.5em;
+
+  }
+
+  .nav-buttons {
+    display: flex;          
+    gap: 0.5em;              
+  }
+  
+  .nav-buttons button {
+    padding: 0.5em 1em;
+    background-color: blue;
+    color: #fff;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .nav-buttons button:hover {
+    background-color: #004080;
+  }
+  
+  
   .hero {
     display: flex;
     flex-direction: column;
@@ -54,6 +77,41 @@
     color: #0ff;
   }
 
+.skills {
+    padding: 2em;
+    text-align: left;
+  }
+  
+  .skill-item {
+    display: grid;
+    grid-template-columns: 120px 250px 50px; 
+    align-items: center;
+    column-gap: 1em;
+    margin-bottom: 1em;
+    font-weight: bold;
+  }
+  
+  .progress-bar {
+    background-color: #eee;
+    border-radius: 4px;
+    height: 10px;
+    position: relative;
+  }
+  
+  .progress-bar .fill {
+    background-color: #66cc66;
+    height: 100%;
+    border-radius: 4px;
+    width: 0;
+    transition: width 0.4s ease;
+  }
+  
+  .skill-percentage {
+    font-size: 0.9em;
+    font-weight: normal;
+    text-align: right;
+  }
+  
   .features {
     display: flex;
     flex-wrap: wrap;
