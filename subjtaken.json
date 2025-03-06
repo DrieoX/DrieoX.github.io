@@ -1,0 +1,328 @@
+{
+    "semesters": [
+      {
+        "year": "1st Year",
+        "semester": "1st Sem",
+        "subjects": [
+          {
+            "no": 1,
+            "code": "IT111",
+            "descriptive": "Introduction to Computing",
+            "units": 3,
+            "section": "IT1R14"
+          },
+          {
+            "no": 2,
+            "code": "IT112",
+            "descriptive": "Computer Programming 1",
+            "units": 3,
+            "section": "IT1R14"
+          },
+          {
+            "no": 3,
+            "code": "PurCom",
+            "descriptive": "Purposive Communication",
+            "units": 3,
+            "section": "IT1R14"
+          },
+          {
+            "no": 4,
+            "code": "RPH",
+            "descriptive": "Readings in Philippine History",
+            "units": 3,
+            "section": "IT1R14"
+          },
+          {
+            "no": 5,
+            "code": "TCW",
+            "descriptive": "The Contemporary World",
+            "units": 3,
+            "section": "IT1R14"
+          },
+          {
+            "no": 6,
+            "code": "MMW",
+            "descriptive": "Mathematics in the Modern World",
+            "units": 3,
+            "section": "IT1R14"
+          },
+          {
+            "no": 7,
+            "code": "PATH FIT 1",
+            "descriptive": "Movement Enhancement",
+            "units": 2,
+            "section": "IT1R14"
+          }
+        ]
+      },
+      {
+        "year": "1st Year",
+        "semester": "2nd Sem",
+        "subjects": [
+          {
+            "no": 1,
+            "code": "STS",
+            "descriptive": "Science, Technology and Society",
+            "units": 3,
+            "section": "IT1R8"
+          },
+          {
+            "no": 2,
+            "code": "NSTP102a",
+            "descriptive": "Reserve Officer Training Corps 2",
+            "units": 3,
+            "section": "IT1R8"
+          },
+          {
+            "no": 3,
+            "code": "IT121",
+            "descriptive": "Computer Programming 2",
+            "units": 3,
+            "section": "IT1R8"
+          },
+          {
+            "no": 4,
+            "code": "IT122",
+            "descriptive": "Data Structures and Algorithms",
+            "units": 3,
+            "section": "IT1R8"
+          },
+          {
+            "no": 5,
+            "code": "IT123",
+            "descriptive": "Discrete Mathematics",
+            "units": 3,
+            "section": "IT1R8"
+          },
+          {
+            "no": 6,
+            "code": "ArtApp",
+            "descriptive": "Art Appreciation",
+            "units": 3,
+            "section": "IT1R8"
+          },
+          {
+            "no": 7,
+            "code": "PATH FIT 2",
+            "descriptive": "Fitness Activity and Exercises",
+            "units": 2,
+            "section": "IT1R8"
+          }
+        ]
+      },
+      {
+        "year": "2nd Year",
+        "semester": "1st Sem",
+        "subjects": [
+          {
+            "no": 1,
+            "code": "IT211",
+            "descriptive": "Intro to Human Computer Interaction",
+            "units": 3,
+            "section": "IT2R9"
+          },
+          {
+            "no": 2,
+            "code": "IT212",
+            "descriptive": "Fundamentals of Database Systems",
+            "units": 3,
+            "section": "IT2R9"
+          },
+          {
+            "no": 3,
+            "code": "IT213",
+            "descriptive": "Platform Technologies",
+            "units": 3,
+            "section": "IT2R9"
+          },
+          {
+            "no": 4,
+            "code": "IT214",
+            "descriptive": "Object Oriented Programming",
+            "units": 3,
+            "section": "IT2R9"
+          },
+          {
+            "no": 5,
+            "code": "IT215",
+            "descriptive": "Accounting Principles",
+            "units": 3,
+            "section": "IT2R9"
+          },
+          {
+            "no": 6,
+            "code": "PATH FIT 3",
+            "descriptive": "Physical Activity Towards Health and Fitness 1",
+            "units": 2,
+            "section": "IT2R9"
+          },
+          {
+            "no": 7,
+            "code": "EnviSci",
+            "descriptive": "Environmental Science",
+            "units": 3,
+            "section": "IT2R9"
+          }
+        ]
+      },
+      {
+        "year": "2nd Year",
+        "semester": "2nd Sem",
+        "subjects": [
+          {
+            "no": 1,
+            "code": "IT221",
+            "descriptive": "Information Management",
+            "units": 3,
+            "section": "IT2R8"
+          },
+          {
+            "no": 2,
+            "code": "IT222",
+            "descriptive": "Networking 1",
+            "units": 3,
+            "section": "IT2R8"
+          },
+          {
+            "no": 3,
+            "code": "IT223",
+            "descriptive": "Web Systems and Technolgies",
+            "units": 3,
+            "section": "IT2R8"
+          },
+          {
+            "no": 4,
+            "code": "IT224",
+            "descriptive": "Systems Integration and Architecture",
+            "units": 3,
+            "section": "IT2R8"
+          },
+          {
+            "no": 5,
+            "code": "Ethc",
+            "descriptive": "Ethics",
+            "units": 3,
+            "section": "IT2R8"
+          },
+          {
+            "no": 6,
+            "code": "Rizal",
+            "descriptive": "Life and Works of Rizal",
+            "units": 3,
+            "section": "IT2R8"
+          },
+          {
+            "no": 7,
+            "code": "PATH FIT 4",
+            "descriptive": "Physical Activity Towards Health and Fitness 2",
+            "units": 2,
+            "section": "IT2R8"
+          }
+        ]
+      },
+      {
+        "year": "3rd Year",
+        "semester": "1st Sem",
+        "subjects": [
+          {
+            "no": 1,
+            "code": "IT311",
+            "descriptive": "Information Assurance and Security",
+            "units": 3,
+            "section": "IT3R12_Track2"
+          },
+          {
+            "no": 2,
+            "code": "IT312",
+            "descriptive": "Networking 2",
+            "units": 3,
+            "section": "IT3R12_Track2"
+          },
+          {
+            "no": 3,
+            "code": "IT313",
+            "descriptive": "Mobile Programming",
+            "units": 3,
+            "section": "IT3R12_Track2"
+          },
+          {
+            "no": 4,
+            "code": "IT314",
+            "descriptive": "Software Engineering",
+            "units": 3,
+            "section": "IT3R12_Track2"
+          },
+          {
+            "no": 5,
+            "code": "IT315",
+            "descriptive": "IT Elective 1",
+            "units": 3,
+            "section": "IT3R1_Track1"
+          },
+          {
+            "no": 6,
+            "code": "ES211a",
+            "descriptive": "Technopreneurship",
+            "units": 3,
+            "section": "IT3R12_Track2"
+          }
+        ]
+      },
+      {
+        "year": "3rd Year",
+        "semester": "2nd Sem",
+        "subjects": [
+          {
+            "no": 1,
+            "code": "IT321_Baldelovar",
+            "descriptive": "CAPSTONE Project and Research 1",
+            "units": 3,
+            "section": "N/A"
+          },
+          {
+            "no": 2,
+            "code": "IT322",
+            "descriptive": "Integrative Programming and Technologies",
+            "units": 3,
+            "section": "IT3R1_Track1"
+          },
+          {
+            "no": 3,
+            "code": "IT323",
+            "descriptive": "Applications Development and Emerging Technologies",
+            "units": 3,
+            "section": "IT3R1_Track1"
+          },
+          {
+            "no": 4,
+            "code": "IT324",
+            "descriptive": "Quantitative Methods",
+            "units": 3,
+            "section": "IT3R1_Track1"
+          },
+          {
+            "no": 5,
+            "code": "PICPE",
+            "descriptive": "Philippine Indigenous Communities and Peace Education",
+            "units": 3,
+            "section": "IT3R1_Track1"
+          },
+          {
+            "no": 6,
+            "code": "FreeElec",
+            "descriptive": "Foreign Language",
+            "units": 3,
+            "section": "IT3R1_Track1"
+          },
+          {
+            "no": 7,
+            "code": "IT325",
+            "descriptive": "IT Elective 2",
+            "units": 3,
+            "section": "IT3R1_Track1"
+          }
+        ]
+      }
+    ]
+  }
+  
