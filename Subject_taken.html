@@ -7,50 +7,112 @@
 </head>
 <body>
   <header>
-    <a href="index.html">Home</a>
+    <div class="nav"><a href="index.html">Home</a>
     <h1>Subjects Taken</h1>
+  </div>
   </header>
+  
+  <!-- Search bar container -->
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search courses...">
+  </div>
   
   <div id="subjects-container"></div>
   
   <script>
+    let allData = null; // global variable to store fetched JSON data
+
+    // Fetch JSON data from subjtaken.json
     fetch('subjtaken.json')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        allData = data; // store data for filtering
+        displaySubjects(data);
+      })
+      .catch(error => console.error('Error fetching JSON:', error));
+
+    // Display all subjects grouped by semester
+    function displaySubjects(data) {
+      const container = document.getElementById('subjects-container');
+      container.innerHTML = '';
+
+      data.semesters.forEach(semester => {
+        // Create a container for each semester
+        const semesterDiv = document.createElement('div');
+        semesterDiv.className = 'semester';
+
+        // Semester header
+        const header = document.createElement('h2');
+        header.textContent = `${semester.year} - ${semester.semester}`;
+        semesterDiv.appendChild(header);
+
+        // List of subjects for this semester
+        const ul = document.createElement('ul');
+        semester.subjects.forEach(subject => {
+          const li = document.createElement('li');
+          li.textContent = `${subject.code}: ${subject.descriptive} (${subject.units} units) - Section ${subject.section}`;
+          ul.appendChild(li);
+        });
+        semesterDiv.appendChild(ul);
+        container.appendChild(semesterDiv);
+      });
     }
-    return response.json();
-  })
-  .then(data => displaySubjects(data))
-  .catch(error => console.error('Error fetching JSON:', error));
 
-function displaySubjects(data) {
-  const container = document.getElementById('subjects-container');
-  container.innerHTML = '';
+    // Filter subjects based on search input
+    function filterSubjects(term) {
+      const container = document.getElementById('subjects-container');
+      container.innerHTML = '';
 
-  data.semesters.forEach(semester => {
-    // Create a container for each semester and assign the "semester" class
-    const semesterDiv = document.createElement('div');
-    semesterDiv.className = 'semester';
+      // For each semester, filter the subjects that match the search term (by code or description)
+      let foundMatch = false;
+      allData.semesters.forEach(semester => {
+        const filteredSubjects = semester.subjects.filter(subject => {
+          const searchStr = term.toLowerCase();
+          return subject.code.toLowerCase().includes(searchStr) ||
+                 subject.descriptive.toLowerCase().includes(searchStr);
+        });
 
-    // Create and append the header for the semester
-    const header = document.createElement('h2');
-    header.textContent = `${semester.year} - ${semester.semester}`;
-    semesterDiv.appendChild(header);
+        // Only display the semester if there's at least one matching subject
+        if (filteredSubjects.length > 0) {
+          foundMatch = true;
+          const semesterDiv = document.createElement('div');
+          semesterDiv.className = 'semester';
 
-    // Create the list of subjects
-    const ul = document.createElement('ul');
-    semester.subjects.forEach(subject => {
-      const li = document.createElement('li');
-      li.textContent = `${subject.code}: ${subject.descriptive} (${subject.units} units) - Section ${subject.section}`;
-      ul.appendChild(li);
+          const header = document.createElement('h2');
+          header.textContent = `${semester.year} - ${semester.semester}`;
+          semesterDiv.appendChild(header);
+
+          const ul = document.createElement('ul');
+          filteredSubjects.forEach(subject => {
+            const li = document.createElement('li');
+            li.textContent = `${subject.code}: ${subject.descriptive} (${subject.units} units) - Section ${subject.section}`;
+            ul.appendChild(li);
+          });
+          semesterDiv.appendChild(ul);
+          container.appendChild(semesterDiv);
+        }
+      });
+      
+      // If no matching subjects are found, display a friendly message.
+      if (!foundMatch) {
+        container.innerHTML = '<p>No matching courses found.</p>';
+      }
+    }
+
+    // Listen for input events on the search field
+    document.getElementById('searchInput').addEventListener('input', function() {
+      const term = this.value.trim();
+      if (term === '') {
+        displaySubjects(allData);
+      } else {
+        filterSubjects(term);
+      }
     });
-    semesterDiv.appendChild(ul);
-
-    // Append this semester container to the main container
-    container.appendChild(semesterDiv);
-  });
-}
   </script>
 </body>
 </html>

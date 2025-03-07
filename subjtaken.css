@@ -1,79 +1,116 @@
+/* Reset and global styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Global body settings */
-  body {
-    background: #333;
-    color: #ccc;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    padding: 1em;
-  }
-  
-  /* Header for the subjects page */
-  header {
-    background: #222;
-    padding: 1em;
-    border-bottom: 1px solid #444;
-    text-align: center;
-  }
-  
-  header h1 {
-    color: #0ff;
-    font-size: 2em;
-  }
-  
-  /* Container for displaying the JSON data */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #333;
+  color: #ccc;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 1em;
+}
+
+/* Header styling */
+header {
+  background: #222;
+  padding: 1em;
+  border-bottom: 1px solid #444;
+  text-align: center;
+}
+
+header h1 {
+  color: #0ff;
+  font-size: 2em;
+}
+
+.nav {
+  list-style-type: none;
+  text-align: center;
+}
+
+.nav a {
+  text-decoration: none;
+  color: teal
+}
+
+.nav a:hover {
+  color: white;
+}
+
+/* Search bar container */
+.search-container {
+  max-width: 800px;
+  margin: 1em auto;
+  padding: 0.5em;
+  text-align: center;
+}
+
+#searchInput {
+  width: 80%;
+  padding: 0.8em;
+  border: 1px solid #666;
+  border-radius: 4px;
+  font-size: 1em;
+  background: #555;
+  color: #ccc;
+}
+
+#searchInput::placeholder {
+  color: #999;
+}
+
+/* Container for subjects data */
+#subjects-container {
+  margin: 2em auto;
+  max-width: 800px;
+  padding: 1em;
+  background: #444;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Styling for each semester section */
+.semester {
+  margin-bottom: 2em;
+  padding: 1em;
+  background: #555;
+  border-radius: 4px;
+}
+
+.semester h2 {
+  margin-bottom: 0.5em;
+  color: #0ff;
+  border-bottom: 1px solid #666;
+  padding-bottom: 0.5em;
+}
+
+/* Subject list styling */
+.semester ul {
+  list-style: none;
+  margin-top: 1em;
+}
+
+.semester li {
+  padding: 0.5em 0;
+  border-bottom: 1px solid #666;
+}
+
+.semester li:last-child {
+  border-bottom: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
   #subjects-container {
-    margin: 2em auto;
-    max-width: 800px;
-    padding: 1em;
-    background: #444;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    padding: 0.5em;
   }
-  
-  /* Each semester section styling */
-  .semester {
-    margin-bottom: 2em;
-    padding: 1em;
-    background: #555;
-    border-radius: 4px;
-  }
-  
-  /* Semester header styling */
   .semester h2 {
-    margin-bottom: 0.5em;
-    color: #0ff;
-    border-bottom: 1px solid #666;
-    padding-bottom: 0.5em;
+    font-size: 1.5em;
   }
-  
-  /* Subject list styling */
-  .semester ul {
-    list-style: none;
-    margin-top: 1em;
+  #searchInput {
+    width: 100%;
   }
-  
-  .semester li {
-    padding: 0.5em 0;
-    border-bottom: 1px solid #666;
-  }
-  
-  .semester li:last-child {
-    border-bottom: none;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 600px) {
-    #subjects-container {
-      padding: 0.5em;
-    }
-    .semester h2 {
-      font-size: 1.5em;
-    }
-  }
-  
+}
