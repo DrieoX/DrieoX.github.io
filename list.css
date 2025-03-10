@@ -5,6 +5,16 @@ body {
     text-align: center;
     transition: background 0.3s, color 0.3s;
   }
+
+a {
+    color: #66b3ff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: #0ff;
+  }
   
   .container {
     max-width: 400px;
@@ -73,5 +83,13 @@ body {
   .dark-mode body {
     background-color: #333;
     color: white;
+  }
+
+  .dark-mode a {
+    color: #0ff;
+  }
+
+  .dark-mode a:hover {
+    color: #66b3ff
   }
   
