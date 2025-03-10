@@ -1,0 +1,9 @@
+{
+    "columns": {
+      "name": "Task Name",
+      "deadline": "Deadline (datetime-local)",
+      "completed": "Completion Status"
+    },
+    "tasks": []
+  }
+  
