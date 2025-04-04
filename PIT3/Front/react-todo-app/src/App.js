@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from './axios'; 
+import axios from './axios';
+import { HashRouter as Router } from 'react-router-dom';
 import './App.css';
 
 function App() {
@@ -8,7 +9,6 @@ function App() {
   const [newDeadline, setNewDeadline] = useState('');
   const [filter, setFilter] = useState('all');
   const [darkMode, setDarkMode] = useState(() => localStorage.getItem('theme') === 'dark');
-
 
   useEffect(() => {
     const theme = darkMode ? 'dark' : 'light';
@@ -96,56 +96,58 @@ function App() {
   });
 
   return (
-    <div className="container">
-      <h1>To-Do List</h1>
-      <button onClick={() => setDarkMode((prev) => !prev)}>
-        {darkMode ? '🔆 Light Mode' : '🌙 Dark Mode'}
-      </button>
+    <Router>
+      <div className="container">
+        <h1>To-Do List</h1>
+        <button onClick={() => setDarkMode((prev) => !prev)}>
+          {darkMode ? '🔆 Light Mode' : '🌙 Dark Mode'}
+        </button>
 
-      <div className="input-section">
-        <input
-          type="text"
-          placeholder="Task Name"
-          value={newTask}
-          onChange={(e) => setNewTask(e.target.value)}
-        />
-        <input
-          type="datetime-local"
-          value={newDeadline}
-          onChange={(e) => setNewDeadline(e.target.value)}
-        />
-        <button onClick={addTask}>Add Task</button>
+        <div className="input-section">
+          <input
+            type="text"
+            placeholder="Task Name"
+            value={newTask}
+            onChange={(e) => setNewTask(e.target.value)}
+          />
+          <input
+            type="datetime-local"
+            value={newDeadline}
+            onChange={(e) => setNewDeadline(e.target.value)}
+          />
+          <button onClick={addTask}>Add Task</button>
+        </div>
+
+        <div className="filters">
+          <button onClick={() => setFilter('all')}>All</button>
+          <button onClick={() => setFilter('completed')}>Completed</button>
+          <button onClick={() => setFilter('pending')}>Pending</button>
+        </div>
+
+        <ul>
+          {filteredTasks.map((task) => (
+            <li key={task.id}>
+              {task.editing ? (
+                <TaskEditForm task={task} saveEdit={saveEdit} cancelEdit={cancelEdit} />
+              ) : (
+                <div className="task-display">
+                  <input
+                    type="checkbox"
+                    checked={task.completed}
+                    onChange={() => toggleTask(task.id)}
+                  />
+                  <span className={`task-info ${task.completed ? 'completed' : ''}`}>
+                    {task.name} - Deadline: {new Date(task.deadline).toLocaleString()}
+                  </span>
+                  <button onClick={() => startEditing(task.id)}>Edit</button>
+                  <button onClick={() => deleteTask(task.id)}>❌</button>
+                </div>
+              )}
+            </li>
+          ))}
+        </ul>
       </div>
-
-      <div className="filters">
-        <button onClick={() => setFilter('all')}>All</button>
-        <button onClick={() => setFilter('completed')}>Completed</button>
-        <button onClick={() => setFilter('pending')}>Pending</button>
-      </div>
-
-      <ul>
-        {filteredTasks.map((task) => (
-          <li key={task.id}>
-            {task.editing ? (
-              <TaskEditForm task={task} saveEdit={saveEdit} cancelEdit={cancelEdit} />
-            ) : (
-              <div className="task-display">
-                <input
-                  type="checkbox"
-                  checked={task.completed}
-                  onChange={() => toggleTask(task.id)}
-                />
-                <span className={`task-info ${task.completed ? 'completed' : ''}`}>
-                  {task.name} - Deadline: {new Date(task.deadline).toLocaleString()}
-                </span>
-                <button onClick={() => startEditing(task.id)}>Edit</button>
-                <button onClick={() => deleteTask(task.id)}>❌</button>
-              </div>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
+    </Router>
   );
 }
 
