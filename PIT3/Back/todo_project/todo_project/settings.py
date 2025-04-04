@@ -38,7 +38,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'todo_project.urls'
+ROOT_URLCONF = 'PIT3.Back.todo_project.urls'
 
 TEMPLATES = [
     {
@@ -55,7 +55,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'todo_project.wsgi.application'
+WSGI_APPLICATION = 'PIT3.Back.todo_project.wsgi.application'
 
 # Database
 # Set up the database to use SQLite or Render's database URL (if applicable).
