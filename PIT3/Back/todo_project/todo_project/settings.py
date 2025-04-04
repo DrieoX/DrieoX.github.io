@@ -110,3 +110,6 @@ SECURE_SSL_REDIRECT = True  # Redirect to HTTPS
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 
+FORCE_SCRIPT_NAME = '/PIT3/Back/todo_project'
+
+

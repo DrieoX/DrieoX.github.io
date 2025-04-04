@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: todo-project
+    env: python
+    buildCommand: |
+      cd PIT3/Back/todo_project
+      pip install -r requirements.txt
+    startCommand: |
+      cd PIT3/Back/todo_project
+      gunicorn todo_project.wsgi:application
+    staticPublishPath: /static
