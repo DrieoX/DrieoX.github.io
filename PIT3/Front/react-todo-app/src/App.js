@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from './axios';  // Updated import
+import axios from './axios'; 
 import './App.css';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
   const [filter, setFilter] = useState('all');
   const [darkMode, setDarkMode] = useState(() => localStorage.getItem('theme') === 'dark');
 
-  // Apply dark mode to the body or container element
+
   useEffect(() => {
     const theme = darkMode ? 'dark' : 'light';
     localStorage.setItem('theme', theme);
